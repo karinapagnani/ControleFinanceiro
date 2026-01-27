@@ -1,0 +1,1 @@
+Sistema simples de controle financeiro em html, css e JavaScript puros. Expressando habilidades de programação orientada a objetos em JavaScript, manipulação do DOM, event handling, CSS Grid e Flexbox

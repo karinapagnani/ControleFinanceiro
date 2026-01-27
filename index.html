@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Controle Financeiro</h1>
+            <p>Gerencie suas finanças de forma simples e eficiente</p>
+        </header>
+
+        <section class="balance-section">
+            <div class="balance-card">
+                <div class="balance-item income">
+                    <span class="balance-label">Receitas</span>
+                    <span class="balance-value" id="income-display">R$ 0,00</span>
+                </div>
+                <div class="balance-item expense">
+                    <span class="balance-label">Despesas</span>
+                    <span class="balance-value" id="expense-display">R$ 0,00</span>
+                </div>
+                <div class="balance-item total">
+                    <span class="balance-label">Saldo Total</span>
+                    <span class="balance-value" id="total-display">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Adicionar Transação</h2>
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="description">Descrição</label>
+                    <input 
+                        type="text" 
+                        id="description" 
+                        placeholder="Ex: Salário, Aluguel, Compras..."
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amount">Valor (R$)</label>
+                        <input 
+                            type="number" 
+                            id="amount" 
+                            placeholder="0,00"
+                            step="0.01"
+                            min="0.01"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Tipo</label>
+                        <select id="type" required>
+                            <option value="income">Receita</option>
+                            <option value="expense">Despesa</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Data</label>
+                        <input 
+                            type="date" 
+                            id="date" 
+                            required
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Adicionar Transação</button>
+            </form>
+        </section>
+
+        <section class="transactions-section">
+            <div class="transactions-header">
+                <h2>Histórico de Transações</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="income">Receitas</button>
+                    <button class="filter-btn" data-filter="expense">Despesas</button>
+                </div>
+            </div>
+
+            <div id="transactions-list" class="transactions-list">
+                <p class="empty-message">Nenhuma transação cadastrada ainda.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
